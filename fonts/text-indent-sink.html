@@ -44,7 +44,17 @@
         div.text-shadow {
             font-size: 24px;
             text-shadow: 5px 8px 5px #6600ff;
-            white-space:pre;
+            white-space: pre;
+        }
+        
+        div.frosted-glass{
+            width:50%;
+            font-size:30px;
+            -webkit-box-shadow: 1px 1px 2px 2px #ccc;
+            -moz-box-shadow: 1px 1px 2px 2px #ccc;
+            box-shadow: 1px 1px 2px 2px #ccc;
+            color:rgba(0,0,0,0);
+            text-shadow: 0 0 6px #272727;
         }
 
     </style>
@@ -55,7 +65,10 @@
     <p id="b">if首字符不下沉、首字符英文小写和悬挂缩进（-6像素）</p>
     <p id="c" class="uppercase">if段落的首字符不下沉、首字符英文大写</p>
     <div>测试字体被选中时</div>
-    <div class="text-shadow">文字的阴影效果, 参数均为 水平偏移量、竖直    、阴影宽度 和  阴影颜色</div>
+    <div class="text-shadow">文字的阴影效果
+        参数均为 水平偏移量、竖直 、阴影宽度 和 阴影颜色
+    </div>
+    <div class="frosted-glass">毛玻璃效果</div>
 </div>
 
 </body>
