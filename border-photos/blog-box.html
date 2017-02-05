@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>blog box</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        .blogDiv {
+            width: 600px;
+            margin: 20px auto;
+        }
+
+        .ad {
+            display: block;
+            width: 291px;
+            height: 30px;
+            background: url(1.png);
+            float: left;
+        }
+
+        .adtext {
+            position: relative;
+            float: right;
+            line-height: 30px;
+            top: 10px;
+        }
+
+        p {
+            float: right;
+        }
+
+        .blogText {
+            margin: 5px auto;
+            float: left;
+            top: 30px;
+        }
+
+        textarea {
+            width: 590px;
+            height: 150px;
+            font-size: 16px;
+            overflow: auto;
+        }
+
+        .post {
+            display: block;
+            background: #8bc528;
+            color: #ffffff;
+            float: right;
+            border: 1px solid;
+            width: 80px;
+            height: 30px;
+            text-align: center;
+            text-decoration: none;
+            line-height: 30px;
+            margin: 3px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            cursor: pointer;
+        }
+
+        #blogNumber {
+            /*font-family:"Bell Mt";*/
+            font-size: 20px;
+        }
+
+        #blogNum {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="blogDiv">
+    <a href="#" class="ad"></a>
+    <a href="#" class="adtext">点击牛运按钮，赢取码上好礼</a>
+    <div class="blogText">
+        <textarea></textarea>
+        <p id="blogNum">还能输入 <span id="blogNumber">140</span> 字</p>
+    </div>
+    <span id="blogBottomLinks"><img src="2.png" alt=""></span>
+    <a class="post">广播</a>
+</div>
+</body>
+</html>
