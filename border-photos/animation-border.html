@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation-border</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #pic {
+            width: 300px;
+            padding: 10px;
+            position: absolute;
+            left: 200px;
+            top: 50px;
+            border: 1px solid;
+        }
+
+        #pic > img {
+            display: block;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #pic:hover .animation_border {
+            opacity: 1;
+        }
+
+        .animation_border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            -webkit-transition: opacity 0.3s ease;
+            -moz-transition: opacity 0.3s ease;
+            -o-transition: opacity 0.3s ease;
+            transition: opacity 0.3s ease;
+            background-image: linear-gradient(45deg, red 25%, transparent 25%, transparent 50%, red 50%, red 75%, transparent 75%, transparent);
+            -webkit-background-size: 30px 30px;
+            background-size: 30px 30px;
+            -webkit-animation: animate 0.5s linear infinite;
+            -o-animation: animate 0.5s linear infinite;
+            animation: animate 0.5s linear infinite;
+        }
+
+        @-webkit-keyframes animate {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 60px 30px;
+            }
+        }
+
+        @-moz-keyframes animate {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 60px 30px;
+            }
+        }
+
+        @keyframes animate {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 60px 30px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div id="pic">
+    <div class="animation_border"></div>
+    <img src="dog.jpg" alt="" width="300" height="200">
+</div>
+</body>
+</html>
