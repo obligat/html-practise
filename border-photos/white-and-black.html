@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title> white black photes </title>
+    <style>
+        img {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+    <script type="text/javascript" src="grayscale.js"></script>
+    <script>
+        window.onload = function () {
+            var oimg = document.getElementsByTagName('img')[1];
+            grayscale(oimg);
+        }
+    </script>
 </head>
 <body>
-$END$
+<img src="dog.jpg" alt="">
+<img src="pencil.jpg" alt="" class="grey">
 </body>
 </html>
