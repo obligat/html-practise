@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>photo detail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #show_bigger_pic {
+            position: absolute;
+            width: 500px;
+            height: 400px;
+            top: 200px;
+            left: 200px;
+        }
+
+        .small_pic_div {
+            width: 240px;
+            height: 240px;
+            border: 1px solid;
+            float: left;
+            position: relative;
+        }
+
+        .big_pic_div {
+            width: 240px;
+            height: 240px;
+            border: 1px solid;
+            float: left;
+            margin-left: 10px;
+            display: none;
+            overflow: hidden;
+        }
+
+        .big_pic_div > img {
+            position: relative;
+        }
+
+        .cover {
+            width: 240px;
+            height: 240px;
+            position: absolute;
+            border: 1px solid;
+            z-index: 2;
+            left: 0;
+            top: 0;
+        }
+
+        .float_span {
+            width: 165px;
+            height: 165px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            background: #B2DFEE;
+            opacity: 0.5;
+            display: none;
+            border: 1px solid;
+        }
+    </style>
+    <script type="text/javascript" src="photo-detail.js"></script>
+</head>
+<body>
+<div id="show_bigger_pic">
+    <span class="cover"></span>
+    <span class="float_span"></span>
+    <div class="small_pic_div">
+        <img src="small.jpg" alt="">
+    </div>
+    <div class="big_pic_div">
+        <img src="big.jpg" alt="">
+    </div>
+</div>
+</body>
+</html>
