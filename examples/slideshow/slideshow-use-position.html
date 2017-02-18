@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slide show use position</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #pics {
+            width: 520px;
+            height: 280px;
+            border: 1px solid;
+            overflow: hidden;
+            position: absolute;
+            top: 100px;
+            left: 300px;
+        }
+
+        .pics {
+            width: 2600px;
+            height: 280px;
+            position: relative;
+            left: 0;
+        }
+
+        .pics > li {
+            float: left;
+        }
+
+        .pics_pre {
+            width: 32px;
+            height: 32px;
+            position: relative;
+            top: 45%;
+            left: 0;
+            background: url("images/arrow_left.png");
+            cursor: pointer;
+            display: none;
+        }
+
+        .pics_next {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            top: 45%;
+            right: 0;
+            background: url("images/arrow_right.png");
+            cursor: pointer;
+            display: none;
+        }
+
+        .pics_list {
+            width: 100%;
+            height: 8%;
+            position: absolute;
+            bottom: 0;
+            background: #8B8878;
+            opacity: 0.8;
+            /*filter: alpha(opacity:80);        */
+            cursor: pointer;
+            text-align: center;
+            display: none;
+        }
+
+        .pics_list > li {
+            width: 10px;
+            height: 10px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            background: #ffffff;
+            cursor: pointer;
+            float: left;
+            margin: 5px;
+            left: 35%;
+            position: relative;
+            list-style: none;
+        }
+
+    </style>
+</head>
+<script type="text/javascript" src="js/zQuery.js"></script>
+<script type="text/javascript" src="js/slideshow-use-position.js"></script>
+<body>
+<div id="pics">
+    <ul class="pics">
+        <li><a href=""><img src="images/1.jpg" alt=""></a></li>
+        <li><a href=""><img src="images/2.jpg" alt=""></a></li>
+        <li><a href=""><img src="images/3.jpg" alt=""></a></li>
+        <li><a href=""><img src="images/4.jpg" alt=""></a></li>
+        <li><a href=""><img src="images/5.jpg" alt=""></a></li>
+    </ul>
+    <span class="pics_pre"></span>
+    <span class="pics_next"></span>
+    <ul class="pics_list"></ul>
+</div>
+</body>
+</html>
