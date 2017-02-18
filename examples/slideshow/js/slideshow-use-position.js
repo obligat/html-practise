@@ -56,7 +56,7 @@ window.onload = function () {
     pics_next.style.display = "block";
     pics_list.style.display = "block";
     clearInterval(timer);
-  }
+  };
 
   pics.onmouseout = function () {
     pics_pre.style.display = "none";

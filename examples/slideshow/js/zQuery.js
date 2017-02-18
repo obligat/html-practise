@@ -140,9 +140,9 @@ function do_buffer_move(obj, oTarget, fnCallBack, fnDuring) {
     cur = css(obj, attr);
     if (oTarget[attr] != cur) {
       bStop = false;
-      if (attr == "translate") {//x����y��ͬʱ�仯ʱ
-        if (!obj.oSpeed1)obj.oSpeed1 = {};//�¿�һ����¼y���ٶȵı���
-        if (!obj.oSpeed1[attr])obj.oSpeed1[attr] = 0;//�¿�һ����¼translate����y�ٶȵı���
+      if (attr == "translate") {
+        if (!obj.oSpeed1)obj.oSpeed1 = {};
+        if (!obj.oSpeed1[attr])obj.oSpeed1[attr] = 0;
         if (!obj.oSpeed)obj.oSpeed = {};
         if (!obj.oSpeed[attr])obj.oSpeed[attr] = 0;
         cur = css(obj, attr);
