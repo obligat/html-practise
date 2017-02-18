@@ -43,11 +43,13 @@ window.onload = function () {
     show(i_now);
   };
   function show(i_now) {
-    var left = pics_lis[i_now].offsetLeft;
-    move(pics_ul, {left: -left});
+    // var left = pics_lis[i_now].offsetLeft;
+    // move(pics_ul, {left: -left});
     for (var i = 0; i < pics_lis.length; i++) {
+      move(pics_lis[i], {opacity: 0});
       list_li[i].style.background = "#ffffff";
     }
+    move(pics_lis[i_now], {opacity: 100});
     list_li[i_now].style.background = "#EE7600";
   }
 
