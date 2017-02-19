@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>paper corner</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    .paper {
+      position: relative;
+      height: auto;
+      width: 860px;
+      margin: 30px auto;
+      padding: 15px;
+      border: 1px solid #cccccc;
+      -webkit-box-shadow: 2px 1px 4px 2px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 2px 1px 4px 2px rgba(0, 0, 0, 0.3);
+      box-shadow: 2px 1px 4px 2px rgba(0, 0, 0, 0.3);
+      -webkit-transition: all 0.4s;
+      -moz-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+
+    }
+
+    .paper:hover {
+      border-top-right-radius: 140px 50px;
+    }
+
+    .content {
+      float: left;
+      width: 100%;
+      height: auto;
+      min-height: 760px; /*设置纸张的最小高度，不是以文字的多少适配*/
+    }
+
+    .paper:before, .paper:after {
+      content: "";
+      background: linear-gradient(top, #ffffff 0%, #e5e5e5 100%);
+      background: #ffffff;
+      border: 1px solid #cccccc;
+      position: absolute;
+      z-index: -1;
+      -webkit-box-shadow: 2px 1px 4px 2px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 2px 1px 4px 2px rgba(0, 0, 0, 0.3);
+      box-shadow: 2px 1px 4px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .paper:before {
+      height: 96%;
+      width: 96%;
+      top: -20px;
+      left: 20px;
+    }
+
+    .paper:after {
+      height: 96%;
+      width: 98%;
+      top: -10px;
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="paper">
+  <div class="content">
+    <h1>I am yours</h1>
+    <p> Well you done done me and you bet I felt it .</p>
+  </div>
+  <div class="clear"></div>
+</div>
+</body>
+</html>
