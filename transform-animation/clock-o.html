@@ -13,10 +13,11 @@
 
     #clock {
       position: absolute;
+      background: url("images/clock.jpg") no-repeat;
     }
 
     #lis li {
-      display: block;
+      display: none;
       position: absolute;
       border: 1px solid;
       background: #000;
@@ -71,7 +72,7 @@
     clock.style.width = clock_width + "px";
 
     clock.style.left = (view_width - clock_width) / 2 + "px";
-    clock.style.backgroundSize = clock_width + "px " + clock_width + "px";
+    clock.style.backgroundSize = clock_width/2 + "px " + clock_width/2 + "px";
 
     var clock_radius = Math.ceil(clock_width / 4);
     clock.style.borderRadius = clock_radius + "px";
