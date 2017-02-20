@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>icon slide</title>
+  <style>
+    .div1 li {
+      list-style: none;
+    }
+
+    .div1 span {
+      height: 16px;
+      width: 16px;
+      display: inline-block;
+      margin-right: 20px;
+      -webkit-transition: background-position .01s;
+      -moz-transition: background-position .01s;
+      -o-transition: background-position .01s;
+      transition: background-position .01s;
+    }
+
+    .icon1 {
+      background: url("images/1.png");
+      background-position: 0 0;
+    }
+
+    .icon2 {
+      background: url("images/1.png");
+      background-position: 0 -20px;
+    }
+
+    .icon3 {
+      background: url("images/1.png");
+      background-position: 0 -40px;
+    }
+
+    .icon4 {
+      background: url("images/1.png");
+      background-position: 0 -117px;
+    }
+
+    .icon5 {
+      background: url("images/1.png");
+      background-position: -42px -141px;
+    }
+
+    .div1 li:nth-child(1):hover .icon1{
+      background-position: -18px 0;
+    }
+
+    .div1 li:nth-child(2):hover .icon2{
+      background-position: -18px -20px;
+    }
+
+    .div1 li:nth-child(3):hover .icon3{
+      background-position: -18px -40px;
+    }
+
+    .div1 li:nth-child(4):hover .icon4{
+      background-position: -18px -117px;
+    }
+
+    .div1 li:nth-child(5):hover .icon5{
+      background-position: -60px -141px;
+    }
+  </style>
+</head>
+<body>
+<div class="div1">
+  <ul>
+    <li><span class="icon1"></span>hello</li>
+    <li><span class="icon2"></span>hello</li>
+    <li><span class="icon3"></span>hello</li>
+    <li><span class="icon4"></span>hello</li>
+    <li><span class="icon5"></span>hello</li>
+  </ul>
+</div>
+</body>
+</html>
