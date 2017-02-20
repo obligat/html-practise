@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>couplet ad</title>
+  <style>
+    div {
+      height: 200px;
+      width: 100px;
+      position: absolute;
+      background: HSL(123, 45%, 80%)
+    }
+
+    #ad1 {
+      left: 20px;
+      top: 0;
+    }
+
+    #ad2 {
+      right: 20px;
+      top: 0;
+    }
+
+    span {
+      position: absolute;
+      bottom: -10%;
+      left: 25%;
+      display: block;
+      height: 20px;
+      width: 50%;
+      border: 1px dashed;
+      cursor: pointer;
+    }
+  </style>
+  <script src="zQuery.js"></script>
+  <script>
+    window.onload = function () {
+      var ad1 = document.getElementById("ad1");
+      var ad2 = document.getElementById("ad2");
+      var span = document.getElementsByTagName("span");
+      for (var i = 0; i < span.length; i++) {
+        span[i].onclick = function () {
+          this.parentNode.style.display = "none";
+        }
+      }
+      var ad_height = ad1.offsetHeight;
+      var view_height = win("height");
+      var top_first = parseInt((view_height - ad_height) / 2);
+      move(ad1, {top: [top_first]});
+      move(ad2, {top: [top_first]});
+
+      window.onscroll = function () {
+        var offtop = win("scrollTop");
+        var top = top_first + offtop;
+        move(ad1, {top: [top]});
+        move(ad2, {top: [top]});
+      };
+
+      window.onresize = function () {
+        var offtop = win("scrollTop");
+        view_height = win("height");
+        top_first = parseInt((view_height - ad_height) / 2);
+        var top = top_first + offtop;
+        move(ad1, {top: [top]});
+        move(ad2, {top: [top]});
+      }
+    }
+  </script>
+</head>
+<body>
+<div id="ad1"><span>关闭X</span></div>
+<div id="ad2"><span>关闭X</span></div>
+</body>
+</html>
