@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>paper corner fold</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #d9d9d9;
+    }
+
+    #paper_top_right {
+      position: absolute;
+      height: 150px;
+      width: 150px;
+      top: 0;
+      right: 0;
+    }
+
+    #animate {
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      background: linear-gradient(45deg, #d7d7d7, #e2e2e2 20%, #ffffff 35%, #d5d5d5 50%, #555555 50%, #555555);
+      border-bottom-left-radius: 10px 90px;
+      border-bottom-right-radius: 100px 1px;
+      -webkit-box-shadow: -3px 2px 5px #333333;
+      -moz-box-shadow: -3px 2px 5px #333333;
+      box-shadow: -3px 2px 5px #333333;
+      top: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    #top_right_change {
+      display: none;
+      width: 145px;
+      height: 145px;       /*because  'box-shadow: -3px 2px 5px #333333;' has 5px */
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+    }
+
+
+  </style>
+  <script type="text/javascript" src="jq.js"></script>
+  <script>
+    $(function () {
+      $("#paper_top_right").hover(function () {
+        show_top_right();
+      }, function () {
+        hide_top_right();
+      });
+    });
+
+    function show_top_right() {
+      $("#animate").stop(true, false).animate(
+          {height: "150px", width: "150px"}, "slow", function () {
+            $("#top_right_change").fadeIn("fast");
+            $("#animate").css("background", "linear-gradient(45deg,#D7D7D7,#E2E2E2 20%,#FFFFFF 35%,#D5D5D5 50%,transparent  50%,transparent )");
+          }
+      );
+    }
+
+    function hide_top_right() {
+      $("#top_right_change").fadeOut(100);
+      $("#animate").css("background", "linear-gradient(45deg,#D7D7D7,#E2E2E2 20%,#FFFFFF 35%,#D5D5D5 50%,#555555 50%,#555555)");
+      $("#animate").stop(true, false).animate(
+          {height: "30px", width: "30px"}, "slow"
+      );
+    }
+
+  </script>
+</head>
+<body>
+<div id="paper_top_right">
+  <div id="animate"></div>
+  <img src="images/dog.jpg " alt="" id="top_right_change"/>
+</div>
+</body>
+</html>
