@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>paper corner three-dimensional</title>
+  <style>
+    body {
+      background: #d9d9d9;
+    }
+
+    #top_right {
+      width: 200px;
+      height: 150px;
+      background: #555555;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    #top_right_all {
+      width: 200px;
+      height: 150px;
+      border-top-right-radius: 200px 150px;
+      position: absolute;
+      background: linear-gradient(45deg, #d7d7d7, #e2e2e2 20%, #ffffff 50%, #e2e2e2 75%, #e2e2e2);
+    }
+
+    #top_left {
+      width: 100px;
+      height: 150px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-top-right-radius: 100px 150px;
+      background: #d9d9d9;
+      -webkit-box-shadow: -3px 2px 2px #333333 inset;
+      -moz-box-shadow: -3px 2px 2px #333333 inset;
+      box-shadow: -3px 2px 2px #333333 inset;
+    }
+
+    #bottom_left {
+      width: 75px;
+      height: 50px;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      border: 0;
+      background: #d9d9d9;
+    }
+
+    #bottom_left_right {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      left: 25px;
+      border-bottom-left-radius: 50px 50px;
+      background: linear-gradient(45deg, #e8e8e8, #f0f0f0);
+      border-top-width: 0;
+      -webkit-box-shadow: -3px 3px 2px #333333;
+      -moz-box-shadow: -3px 3px 2px #333333;
+      box-shadow: -3px 3px 2px #333333;
+    }
+
+    #bottom_middle {
+      width: 50px;
+      height: 40px;
+      position: absolute;
+      top: 110px;
+      left: 100px;
+      border-top-left-radius: 75px 50px;
+      box-shadow: 2px 3px 2px #333333 inset;
+      background: #d9d9d9;
+    }
+
+    #bottom_right {
+      width: 50px;
+      height: 20px;
+      position: absolute;
+      top: 110px;
+      left: 150px;
+      border-top-right-radius: 80px 20px;
+      -webkit-box-shadow: -5px 3px 2px #333333 inset;
+      -moz-box-shadow: -5px 3px 2px #333333 inset;
+      box-shadow: -5px 3px 2px #333333 inset;
+      background: #d9d9d9;
+    }
+
+    #bottom_right_bottom {
+      width: 50px;
+      height: 20px;
+      position: absolute;
+      top: 20px;
+      background: #d9d9d9;
+    }
+  </style>
+</head>
+<body>
+<div id="top_right">
+  <div id="top_right_all">
+    <div id="top_left"></div>
+    <div id="bottom_middle"></div>
+    <div id="bottom_right">
+      <div id="bottom_right_bottom"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
