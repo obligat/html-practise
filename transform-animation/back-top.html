@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>back top</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #bottom-top {
+      position: absolute;
+      right: 0;
+      width: 34px;
+      height: 34px;
+      background: url("images/bottom-top.png")  no-repeat;
+      background-position: top;
+    }
+  </style>
+  <script>
+
+    function win(attr) {
+      var winHeight, winWidth, scrollTop;
+      switch (attr) {
+        case 'height':
+          if (window.innerHeight) {
+            winHeight = window.innerHeight;
+          } else if ((document.body) && (document.body.clientHeight)) {
+            alert("body");
+            winHeight = document.body.clientHeight;
+          } else if (document.documentElement && document.documentElement.clientHeight) {
+            winHeight = document.documentElement.clientHeight;
+          }
+          return winHeight;
+          break;
+        case 'width':
+          if (window.innerWidth) {
+            winWidth = window.innerWidth;
+            return winWidth;
+          } else if ((document.body) && (document.body.clientWidth)) {
+            winWidth = document.body.clientWidth;
+            return winWidth;
+          } else if (document.documentElement && document.documentElement.clientWidth) {
+            winWidth = document.documentElement.clientWidth;
+            return winWidth;
+          }
+          break;
+        case 'scrollTop':
+          if (typeof window.pageYOffset != 'undefined') {
+            scrollTop = window.pageYOffset;
+          }
+          else if (typeof document.compatMode != 'undefined' &&
+              document.compatMode != 'BackCompat') {
+            scrollTop = document.documentElement.scrollTop;
+          }
+          else if (typeof document.body != 'undefined') {
+            scrollTop = document.body.scrollTop;
+          }
+          return scrollTop;
+          break;
+        default :
+          return 0;
+          break;
+      }
+    }
+
+    window.onload = function () {
+      var bottom_top = document.getElementById("bottom-top");
+      var bottom_top_height = bottom_top.offsetHeight;
+      var window_height = win("height");
+      bottom_top.style.top = window_height - bottom_top_height + "px";
+      bottom_top.onmouseover = function () {
+        this.style.backgroundPosition = "bottom";    //从底部开始填充
+      };
+      bottom_top.onmouseout = function () {
+        this.style.backgroundPosition = "top";     //从顶部
+      };
+      bottom_top.onclick = function () {
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      };
+      window.onscroll = function () {
+        var scroll_dis = win("scrollTop");
+        var top = window_height - bottom_top_height + scroll_dis;
+        bottom_top.style.top = top + "px";
+      }
+    }
+
+  </script>
+</head>
+<body>
+<div id="bottom-top">
+
+</div>
+本段代码实现的是快速回到顶部的功能。
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+去底部的功能可以自行拓展，举一反三。
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>
