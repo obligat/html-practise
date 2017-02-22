@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sector show</title>
+  <style>
+    .sb-container {
+      position: relative;
+      margin: 30px auto;
+      width: 500px;
+      text-align: center;
+    }
+
+    .sb-container div {
+      width: 130px;
+      height: 400px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #ffffff;
+      cursor: pointer;
+      transform-origin: 25% 90%;
+      -webkit-transition: 0.5s ease;
+      -moz-transition: 0.5s ease;
+      -o-transition: 0.5s ease;
+      transition: 0.5s ease;
+    }
+
+    .sb-container div:nth-child(1) {
+      background-color: #ea2a29;
+      box-shadow: -1px -1px 3px rgba(0, 0, 0, .1), 1px 1px 1px rgba(0, 0, 0, .1), inset 0 3px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .sb-container div:nth-child(2) {
+      background-color: #f16729;
+      box-shadow: -1px -1px 3px rgba(0, 0, 0, .1), 2px 2px 1px rgba(0, 0, 0, 0.1), inset 0 3px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .sb-container div:nth-child(3) {
+      background-color: #f89322;
+      box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.1), 3px 3px 2px rgba(0, 0, 0, 0.2), inset 0 3px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .sb-container div:nth-child(4) {
+      background-color: #ffcf14;
+      box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.2), inset 0 3px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .sb-container div:nth-child(5) {
+      background-color: #ffea0d;
+      box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.1), 5px 5px 6px rgba(0, 0, 0, 0.3), inset 0 3px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .sb-container div:nth-child(6) {
+      background-color: #87b11d;
+      box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.1), 6px 6px 8px rgba(0, 0, 0, 0.3), inset 0 3px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .sb-container div:nth-child(7) {
+      background-color: #008253;
+      box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.1), 7px 7px 10px rgba(0, 0, 0, 0.4), inset 0 3px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .sb-container div:nth-child(8) {
+      background-color: #3277b5;
+      box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.1), 8px 8px 12px rgba(0, 0, 0, 0.4), inset 0 3px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .sb-container div:nth-child(9) {
+      background-color: #4c549f;
+      box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.1), 9px 9px 14px rgba(0, 0, 0, 0.4), inset 0 3px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .sb-container div:nth-child(10) {
+      background-color: #764394;
+      box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.1), 10px 10px 16px rgba(0, 0, 0, 0.4), inset 0 3px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .sb-container div:nth-child(11) {
+      background-color: #ca0d86;
+      box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.1), 11px 11px 18px rgba(0, 0, 0, 0.4), inset 0 3px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .sb-container div:last-child {
+      background: #645b5c url("images/cover.jpg") repeat center center;
+      box-shadow: -1px -1px 3px rgba(0, 0, 0, .2), 12px 12px 20px rgba(0, 0, 0, .6), inset 2px 2px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .sb-container div:last-child:after {
+      content: '';
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #dddddd;
+      background: linear-gradient(135deg, #dddddd 0%, #58535e 48%, #889396 100%);
+      box-shadow: -1px -1px 1px rgba(0, 0, 0, .5), 1px 1px 1px rgba(255, 255, 255, 0.1);
+    }
+
+    .sb-container div:last-child h5 {
+      font-size: 40px;
+      white-space: nowrap;
+      position: absolute;
+      top: 0;
+      left: 0;
+      line-height: 40px;
+      color: #111;
+      text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1);
+      -webkit-transform: rotate(-90deg) translateX(-120%) translateY(100%);
+      -moz-transform: rotate(-90deg) translateX(-120%) translateY(100%);
+      -ms-transform: rotate(-90deg) translateX(-120%) translateY(100%);
+      -o-transform: rotate(-90deg) translateX(-120%) translateY(100%);
+      transform: rotate(-90deg) translateX(-120%) translateY(100%);
+      transform-origin: 0 0;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @font-face {
+      font-family: "icon";
+      src: url("images/icon.eot"), url("images/icon.ttf");
+    }
+
+    span.sb-icon:before {
+      font-family: "icon";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 60px;
+      display: block;
+      text-decoration: inherit;
+      text-align: center;
+      text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3), 0 0 1px #000;
+      line-height: 64px;
+      width: 100%;
+      color: #000;
+    }
+
+    .icon-cog:before {
+      content: "\38";
+    }
+
+    .icon-flight:before {
+      content: '\37';
+    }
+
+    .icon-eye:before {
+      content: '\36';
+    }
+
+    .icon-bag:before {
+      content: '\34';
+    }
+
+    .icon-install:before {
+      content: '\35';
+    }
+
+    .icon-globe:before {
+      content: '\33';
+    }
+
+    .icon-picture:before {
+      content: '\32';
+    }
+
+    .icon-video:before {
+      content: '\31';
+    }
+
+    .icon-download:before {
+      content: '\41';
+    }
+
+    .icon-mobile:before {
+      content: '\42';
+    }
+
+    .icon-camera:before {
+      content: '\39';
+    }
+  </style>
+
+  <script>
+
+    function index(current, obj) {
+      for (var i = 0; i < obj.length; i++) {
+        if (obj[i] == current) {
+          return i;
+        }
+      }
+    }
+
+    window.onload = function () {
+      var container = document.getElementById("sb-container");
+      var cards = container.getElementsByTagName("div");
+      var n = cards.length;
+      var deg = 180 / n;
+      var click = 0;
+      for (var i = 0; i < n; i++) {
+        var tDeg = (i <= n / 2) ? -(n / 2 - i) * deg : (i - n / 2) * deg;
+        cards[i].style.transform = "rotate(" + tDeg + "deg)";
+      }
+
+      for (var i = 0; i < n - 1; i++) {
+        cards[i].onclick = function () {
+          change(index(this, cards));
+        };
+      }
+
+      cards[n - 1].onclick = function () {         //首页
+        click++;
+        for (var i = 0; i < n; i++) {
+          if (click % 2) {
+            var tDeg = (i <= n / 2) ? -(n / 2 - i) * deg : (i - n / 2) * deg;
+          } else {
+            var tDeg = 0;
+          }
+          cards[i].style.transform = "rotate(" + tDeg + "deg)";
+        }
+      };
+
+      function change(index) {
+        var tDeg;
+        for (var i = 0; i <= index; i++) {
+          tDeg = -(index - i) * deg;
+          cards[i].style.transform = "rotate(" + tDeg + "deg)";
+        }
+
+        for (var i = index + 1; i < n; i++) {
+          tDeg = (i - index) * deg + 5;
+          cards[i].style.transform = "rotate(" + tDeg + "deg)";
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+<div id="sb-container" class="sb-container">
+  <div><span class="sb-icon icon-cog"></span>
+    <h4><span>设置</span></h4>
+  </div>
+  <div><span class="sb-icon icon-flight"></span>
+    <h4><span>模式</span></h4>
+  </div>
+  <div><span class="sb-icon icon-eye"></span>
+    <h4><span>浏览</span></h4>
+  </div>
+  <div><span class="sb-icon icon-install"></span>
+    <h4><span>软件</span></h4>
+  </div>
+  <div><span class="sb-icon icon-bag"></span>
+    <h4><span>产品</span></h4>
+  </div>
+  <div><span class="sb-icon icon-globe"></span>
+    <h4><span>选项</span></h4>
+  </div>
+  <div><span class="sb-icon icon-picture"></span>
+    <h4><span>图片</span></h4>
+  </div>
+  <div><span class="sb-icon icon-video"></span>
+    <h4><span>视频</span></h4>
+  </div>
+  <div><span class="sb-icon icon-download"></span>
+    <h4><span>下载</span></h4>
+  </div>
+  <div><span class="sb-icon icon-mobile"></span>
+    <h4><span>主题</span></h4>
+  </div>
+  <div><span class="sb-icon icon-camera"></span>
+    <h4><span>数码</span></h4>
+  </div>
+  <div>
+    <h4><span>click to show or hidden</span></h4>
+    <h5><span>&hearts; COLORFUL</span></h5>
+  </div>
+</div>
+</body>
+</html>
