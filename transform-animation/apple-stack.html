@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>apple stack</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #stack {
+      position: absolute;
+      left: 300px;
+      bottom: 64px;
+    }
+
+    #stack > ul > li {
+      position: absolute;
+      list-style: none;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+
+    #stack > ul > li > img {
+      width: 50px;
+      height: 50px;
+    }
+
+    #stack > ul > li > span {
+      position: absolute;
+      top: 40%;
+      right: 80px;
+      padding-left: 20px;
+      padding-right: 20px;
+      width: auto;
+      border: 1px solid #9e9e9e;
+      border-radius: 8px;
+      background: #9e9e9e;
+      color: #ffffff;
+      font-size: 14px;
+      text-align: center;
+      display: block;
+    }
+  </style>
+  <script src="zQuery.js"></script>
+  <script>
+    window.onload = function () {
+      var stack = document.getElementById("stack");
+      var stack_ul = stack.getElementsByTagName("ul")[0];
+      var stack_ul_lis = stack_ul.getElementsByTagName("li");
+      var li_height = stack_ul_lis[0].offsetHeight;
+      var R = 40 * li_height;
+      for (var i = 0; i < stack_ul_lis.length - 1; i++) {
+        var img = stack_ul_lis[i].getElementsByTagName("img")[0];
+        var text = document.createTextNode(img.getAttribute("alt"));
+        var span = document.createElement("span");
+        span.appendChild(text);
+        stack_ul_lis[i].appendChild(span);
+        stack_ul_lis[i].style.opacity = "0";
+      }
+
+      var btn = false;
+      stack_ul_lis[stack_ul_lis.length - 1].onclick = function () {
+        btn = !btn;
+        btn ? show_stack() : hide_stack();
+      };
+
+      function show_stack() {
+        for (var i = 0; i < stack_ul_lis.length - 1; i++) {
+          var deg = 1.3 * (stack_ul_lis.length - i - 1 ) / 180 * Math.PI;
+          var tl = Math.ceil(R * (1 - Math.cos(deg)));
+          var tt = Math.ceil(R * Math.sin(deg));
+          var d1 = Math.cos(deg);
+          var d2 = Math.sin(deg);
+          var d3 = -Math.sin(deg);
+          var d4 = Math.cos(deg);
+          move(stack_ul_lis[i], {transform: [d1, d2, d3, d4, tl, -tt], opacity: [100]});
+        }
+      }
+
+      function hide_stack() {
+        for (var i = 0; i < stack_ul_lis.length - 1; i++) {
+          move(stack_ul_lis[i], {transform: [1, 0, 0, 1, 0, 0], opacity: [0]});
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+<div id="stack">
+  <ul>
+    <li><img src="images/Appstore.png" alt="Appstore"/></li>
+    <li><img src="images/AddressBook.png" alt="AddressBook"/></li>
+    <li><img src="images/FaceTime.png" alt="FaceTime"/></li>
+    <li><img src="images/iCalendar.png" alt="iCalendar"/></li>
+    <li><img src="images/iPhoto.png" alt="iPhoto"/></li>
+    <li><img src="images/iTunes.png" alt="iTunes"/></li>
+    <li><img src="images/Mail.png" alt="Mail"/></li>
+    <li><img src="images/PhotoBooth.png" alt="PhotoBooth"/></li>
+    <li><img src="images/safari.png" alt="Safari"/></li>
+    <li><img src="images/Finder.png" alt=""/></li>
+
+  </ul>
+</div>
+</body>
+</html>
