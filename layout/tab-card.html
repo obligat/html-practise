@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>tab card</title>
+  <style>
+
+    .clear {
+      clear: both;
+    }
+
+    #gallery {
+      font: 11px verdana, arial, sans-serif;
+      width: 750px;
+      padding-top: 15px;
+      line-height: 15px;
+    }
+
+    #gallery .on {
+      position: relative;
+      float: left;
+      height: 33px;
+      margin-right: 2px;
+      margin-top: 1px;
+      padding: 0 20px;
+      color: #c00;
+      background: #00ccff;
+      border: 1px solid #000000;
+      border-bottom: 0;
+      line-height: 32px;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    #gallery .off {
+      position: relative;
+      float: left;
+      height: 33px;
+      line-height: 33px;
+      margin-right: 2px;
+      padding: 0 20px;
+      color: #000;
+      background: #d3c964;
+      border: 1px solid #dddddd;
+      border-bottom-color: #000000;
+      cursor: pointer;
+      z-index: 20;
+    }
+
+    .show {
+      clear: left;
+      position: relative;
+      font: 11px verdana, arial, sans-serif;
+      background: #fffccc;
+      width: 708px;
+      top: -1px;
+      border: 1px solid #000000;
+      padding: 20px;
+      line-height: 18px;
+      z-index: 50;
+    }
+
+    .show img {
+      float: left;
+      margin: 0 10px 10px 0;
+    }
+
+    .hide {
+      display: none;
+/*      width: 0;
+      overflow: hidden;*/
+    }
+
+  </style>
+  <script>
+    window.onload = function () {
+      var e, i = 0;
+      while (e = document.getElementById('gallery').getElementsByTagName('div')[i++]) {
+        if (e.className == 'on' || e.className == 'off') {
+          e.onclick = function () {
+            var getEls = document.getElementsByTagName('div');
+            for (var j = 0; j < getEls.length; j++) {
+              getEls[j].className = getEls[j].className.replace('show', 'hide');
+              getEls[j].className = getEls[j].className.replace('on', 'off');
+            }
+            this.className = 'on';
+            var target = this.getAttribute('title');
+            document.getElementById(target).className = "show";
+          }
+        }
+      }
+    };
+
+  </script>
+</head>
+<body>
+<div id="gallery">
+  <div class="on" title="news"><span>新闻</span></div>
+  <div class="off" title="entertainment"><span>娱乐</span></div>
+  <div class="off" title="travel"><span>旅游</span></div>
+  <div class="off" title="city"><span>城市</span></div>
+  <div class="off" title="life"><span>生活</span></div>
+</div>
+<div id="news" class="show">
+  <p>Although he showed an early talent for art and began painting his native Suffolk scenery before he left school, his
+    great originality matured slowly.</p>
+  <img src="chagall.jpg" alt="The Hay Wain" title="The Hay Wain"/>
+  <p>He committed himself to a career as an artist only in 1799, when he joined the Royal Academy Schools and it was not
+    until 1829 that he was grudgingly made a full Academician, elected by a majority of only one vote.</p>
+  <br class="clear"/>
+</div>
+
+<div id="entertainment" class="hide">
+  <p>His youth was spent in Le Havre, where he first excelled as a caricaturist but was then converted to landscape
+    painting by his early mentor .
+    <img src="chagall.jpg" alt="Women in the Garden" title="Women in the Garden"/>
+  <p>He then, in 1862, entered the studio of Gleyre in Paris and there met Renoir, Sisley, and Bazille,
+    with whom he was
+    to form the nucleus of the Impressionist group.</p>
+  <br class="clear">
+</div>
+
+<div id="travel" class="hide">
+  <p>Gogh, Vincent (Willem) van (b. March 30, 1853, Zundert, Neth.--d. July 29, 1890, Auvers-sur-Oise,
+    near Paris),
+    generally considered the greatest Dutch painter and draughtsman after
+    <img src="chagall.jpg" alt="The Starry Night" title="The Starry Night"/>
+    in modern art. His work, all of it produced during a period of only 10 years, hauntingly conveys through its
+    striking colour, coarse brushwork, and contoured forms the anguish of a mental illness that eventually resulted in
+    <br class="clear"/>
+</div>
+
+<div id="city" class="hide">
+  <img src="chagall.jpg" alt="Adam and Eve" title="Adam and Eve"/>
+  <p>葬我在荷花池内，
+    耳边有水蚓拖声，
+    在绿荷叶的灯上
+    萤火虫时暗时明——
+
+    葬我在马缨花下，
+    永做芬芳的梦——
+    葬我在泰山之巅，
+    风声呜咽过孤松——
+
+    不然，就烧我成灰，
+    投入泛滥的春江，
+    与落花一同漂去
+    无人知道的地方。
+  </p>
+  <br class="clear"/>
+</div>
+
+<div id="life" class="hide">
+  <img src="chagall.jpg" alt="Girtl in front of mirror" title="Girtl in front of mirror"/>
+  <p>Pablo Picasso, born in Spain, was a child prodigy who was recognized as such by his art-teacher father, who ably
+    led him along.</p>
+  <p>He was a rebel from the start and, as a teenager, began to frequent the Barcelona cafes where
+    intellectuals
+    gathered.</p>
+  <br class="clear"/>
+</div>
+</body>
+</html>
