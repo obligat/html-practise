@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>needle effect</title>
+  <style>
+    .needle {
+      height: 100px;
+      width: 500px;
+      margin: 15px;
+      padding: 20px;
+      background: #6e6e6e;
+      border: 2px solid rgba(247, 231, 247, 0.8);
+      border-radius: 6px;
+      font-size: 24px;
+      color: #fffccc;
+      position: relative;
+    }
+
+    .needle:before {
+      position: absolute;
+      top: 3px;
+      bottom: 3px;
+      left: 3px;
+      right: 3px;
+      border: 2px dashed rgba(255, 255, 255, 0.8);
+      content: '';
+    }
+
+  </style>
 </head>
 <body>
-$END$
+<div class="needle">needle effect</div>
 </body>
 </html>
