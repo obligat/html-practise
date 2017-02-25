@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>flex</title>
+  <style>
+    .wrap1, .wrap2, .wrap3 {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      border: 1px solid;
+    }
+
+    .wrap1 > div, .wrap2 > div, .wrap3 > div {
+      display: flex;
+      width: 400px;
+      height: 200px;
+      margin: 20px;
+      border: 1px solid;
+    }
+
+    .row {
+      flex-direction: row;
+    }
+
+    .re-row {
+      flex-direction: row-reverse;
+    }
+
+    .column {
+      flex-direction: column;
+    }
+
+    .re-column {
+      flex-direction: column-reverse;
+    }
+
+    .re-wrap {
+      flex-direction: row;
+      flex-wrap: wrap-reverse;
+    }
+
+    .col-wrap {
+      flex-flow: column wrap;
+    }
+
+    .wrap1 > div > div, .wrap3 > div > div {
+      width: 80px;
+      height: 80px;
+      margin: 10px;
+      background: #ffcf6e;
+    }
+
+    .main-axis {
+      justify-content: space-between;
+      flex-flow: row wrap;
+    }
+
+    .main-axis2 {
+      justify-content: space-around;
+    }
+
+    .main-axis3 {
+      justify-content: center;
+    }
+
+    .main-axis4 {
+      justify-content: flex-end;
+    }
+
+    .wrap2 > div > div:nth-child(1) {
+      width: 20px;
+      height: 100px;
+      background: #a5ee66;
+    }
+
+    .wrap2 > div > div:nth-child(2) {
+      width: 80px;
+      height: 60px;
+      background: #3ad1ff;
+    }
+
+    .wrap2 > div > div:nth-child(3) {
+      width: 100px;
+      height: 50px;
+      background: #d3c964;
+    }
+
+    .cross-axis {
+      align-items: flex-start;
+    }
+
+    .cross-axis2 {
+      align-items: center;
+    }
+
+    .cross-axis3 {
+      align-items: flex-end;
+    }
+
+    .cross-axis4 {
+      align-items: inherit;
+    }
+
+    .cross-axis5 {
+      align-items: stretch;
+    }
+
+    .cross-axis6 {
+      align-items: baseline;
+    }
+
+    .order > div:nth-child(1) {
+      order: 2;
+    }
+
+    .order > div:nth-child(2) {
+      order: 1;
+    }
+
+    .order > div:nth-child(3) {
+      order: 6;
+    }
+
+    .order > div:nth-child(4) {
+      order: 5;
+    }
+
+    .order > div:nth-child(5) {
+      order: 2;
+    }
+
+    .grow {
+      flex-flow: row wrap;
+    }
+
+    .grow > div:nth-child(1) {
+      flex-grow: 1;
+    }
+
+    .grow > div:nth-child(2) {
+      flex-grow: 2;
+    }
+
+    .grow > div:nth-child(3) {
+      flex-grow: 1;
+    }
+
+    .shrink > div:nth-child(1) {
+      flex-shrink: 2;
+    }
+
+    .shrink > div:nth-child(2) {
+      flex-shrink: 4;
+    }
+
+    .shrink > div:nth-child(3) {
+      flex-shrink: 0;
+    }
+
+    .shrink > div:nth-child(4) {
+      flex-shrink: 2;
+    }
+
+    .shrink > div:nth-child(5) {
+      flex-shrink: 1;
+    }
+
+    .shrink > div:nth-child(6) {
+      flex-shrink: 4;
+    }
+
+    .basis {
+      flex-flow: row wrap;
+    }
+
+    .basis > div:first-child {
+      flex-basis: 200px;
+    }
+
+    .basis > div:last-child {
+      flex-basis: 50px;
+    }
+
+    .flex > div:nth-child(1) {
+      flex: 0 1 auto;
+    }
+
+    .flex > div:nth-child(2) {
+      flex: 1 0 auto;
+    }
+
+    .flex > div:nth-child(3) {
+      flex: 1 0 auto;
+    }
+
+    .flex > div:nth-child(4) {
+      flex: 0 0 auto;
+    }
+
+    .flex > div:nth-child(5) {
+      flex: auto;
+    }
+
+    .flex > div:nth-child(6) {
+      flex: 0 2 auto;
+    }
+
+    .flex > div:nth-child(7) {
+      flex: 0 2 100px;
+    }
+
+
+  </style>
+</head>
+<body>
+<div class="wrap1">
+  <div class="row">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    flex-direction : row
+  </div>
+  <div class="re-row">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    flex-direction: row-reverse
+  </div>
+  <div class="column">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    flex-direction: column
+  </div>
+  <div class="re-column">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    flex-direction: column-reverse
+  </div>
+  <div class="re-wrap">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    flex-direction : row
+    flex-wrap : wrap-reverse
+  </div>
+  <div class="col-wrap">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    flex-flow : column wrap (flex-flow：row nowrap 为默认值)
+  </div>
+</div>
+<div class="wrap2">
+  <div class="main-axis">
+    <div></div>
+    <div></div>
+    <div></div>
+    justify-content:space-between;<br>
+    这里的初始值为 flex-start; 即 initial = flex-start;<br>
+    继承的话继承自 .wrap2,也就是 center;
+  </div>
+  <div class="main-axis2">
+    <div></div>
+    <div></div>
+    <div></div>
+    justify-content: space-around;
+  </div>
+  <div class="main-axis3">
+    <div></div>
+    <div></div>
+    <div></div>
+    justify-content: center;
+  </div>
+  <div class="main-axis4">
+    <div></div>
+    <div></div>
+    <div></div>
+    justify-content: flex-end;
+  </div>
+  <div class="cross-axis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    align-items: flex-start;
+  </div>
+  <div class="cross-axis2">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    align-items: center;
+  </div>
+  <div class="cross-axis3">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    align-items: flex-end;
+  </div>
+  <div class="cross-axis4">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    align-items: inherit;
+  </div>
+  <div class="cross-axis5">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    align-items: stretch;
+  </div>
+  <div class="cross-axis6">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    align-items: baseline;
+  </div>
+</div>
+<div class="wrap3">
+  <div class="order">
+    <div>1(order: 2;)</div>
+    <div>2(order: 1;)</div>
+    <div>3(order: 6;)</div>
+    <div>4(order: 5;)</div>
+    <div>5(order: 2;)</div>
+  </div>
+  <div class="grow">
+    <div>flex-grow: 1;</div>
+    <div>flex-grow: 2;</div>
+    <div>flex-grow: 1;</div>
+    flex-grow:0; （默认）<br>
+    即使存在剩余空间也不放大<br>
+    为了写注释，这里使用了 flex-flow:row wrap;
+  </div>
+  <div class="shrink">
+    <div>flex-shrink: 2;</div>
+    <div>flex-shrink: 4;</div>
+    <div>flex-shrink: 0;(不缩)</div>
+    <div>flex-shrink: 2;</div>
+    <div>flex-shrink: 1;(默认)</div>
+    <!--<div>flex-shrink: 4;</div>          // 当太挤了的时候，剩下的等比例缩小。
+-->
+  </div>
+  <div class="basis">
+    <div>flex-basis: 200px;</div>
+    <div></div>
+    <div>flex-basis: 50px;</div>
+    flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
+  </div>
+  <div class="flex">
+    <div>flex: 0 1 auto;</div>
+    <div>flex: 1 0 auto;</div>
+    <div>flex: 1 1 auto;</div>
+    <div>flex: auto;</div>
+    <div>flex: 0 0 auto;</div>
+    <div>flex: none ;</div>
+    <div>flex: 0 2 auto;</div>
+    <div>flex: 0 2 100px;</div>
+  </div>
+</div>
+
+
+</body>
+</html>
