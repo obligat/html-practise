@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>border radius</title>
+  <style>
+
+    .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .wrap > div {
+      text-align: center;
+      width: 200px;
+      height: 120px;
+      padding-top: 80px;
+      margin: 10px;
+    }
+
+    #test1 {
+      border: 1px solid #00ccff;
+      border-radius: 15px;
+    }
+
+    #test2 {
+      border: 1px solid #ff3f3f;
+      border-radius: 15px 25px;
+    }
+
+    #test3 {
+      border: 1px solid #d3c964;
+      border-radius: 15px 25px 0;
+    }
+
+    #test4 {
+      border: 1px solid #272727;
+      border-radius: 15px 25px / 60px;
+    }
+
+    #test5 {
+      border: 1px solid #dcdcdc;
+      border-radius: 15px 25px / 30px 50px;
+    }
+
+    #test6 {
+      border: 1px solid #ffcf6e;
+      border-radius: 15px 25px 0 / 30px 50px;
+    }
+
+    #test7 {
+      border: 1px solid #8bc528;
+      border-radius: 15px 25px 15px / 30px 50px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div id="test1"> border-radius: 15px;</div>
+  <div id="test2"> border-radius: 15px 25px;</div>
+  <div id="test3"> border-radius: 15px 25px 0;</div>
+  <div id="test4"> border-radius: 15px 25px / 60px;</div>
+  <div id="test5"> border-radius: 15px 25px / 30px 50px;</div>
+  <div id="test6"> border-radius: 15px 25px 0 / 30px 50px;</div>
+  <div id="test7"> border-radius: 15px 25px 10px / 30px 50px;</div>
+
+</div>
+</body>
+</html>
