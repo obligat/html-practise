@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>transform-animation</title>
+  <style>
+    .wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .wrap > div {
+      width: 150px;
+      height: 150px;
+      margin: 30px;
+      border: 1px solid;
+    }
+
+    .rotate {
+      -webkit-transform: rotate(30deg);
+      -moz-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+      -o-transform: rotate(30deg);
+      transform: rotate(30deg);
+    }
+
+    .box {
+      background: #ffcf6e;
+      -webkit-transition: width 2s;
+      -moz-transition: width 2s;
+      -o-transition: width 2s;
+      transition: 2s;
+    }
+
+    .box:hover{
+      -webkit-transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+      -o-transform: scale(0.5);
+      transform: scale(0.5);
+    }
+
+    @keyframes identifier {
+      0% { top: 0; left: 0; }
+      30% { top: 50px; }
+      68%, 72% { left: 50px; }
+      100% { top: 100px;  }
+    }
+
+    .move {
+      position: absolute;
+      -webkit-animation:identifier 5s linear 2s infinite alternate;
+      -o-animation:identifier 5s linear 2s infinite alternate;
+      animation:identifier 5s linear 2s infinite alternate;
+    }
+    
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="rotate"></div>
+  <div class="box"></div>
+  <div class="move"></div>
+</div>
+</body>
+</html>
