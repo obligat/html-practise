@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>linear gradient</title>
+  <style>
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .wrap > div {
+      width: 150px;
+      height: 150px;
+      border: 1px solid;
+      margin: 20px;
+    }
+
+    #test1 {
+      background: linear-gradient(to top, red, yellow, blue);
+    }
+
+    #test2 {
+      background: linear-gradient(to bottom right, red 25%, white 50%, yellow 75%, blue);
+    }
+
+    #test7 {
+      background: -webkit-linear-gradient(0deg, red, yellow, blue);
+    }
+
+    #test3 {
+      background: linear-gradient(0deg, red, yellow, blue);
+    }
+
+    #test4 {
+      background: linear-gradient(30deg, red, yellow, blue);
+    }
+
+    #test5 {
+      background: linear-gradient(90deg, red, yellow, blue);
+    }
+
+    #test6 {
+      background: linear-gradient(-90deg, red, yellow, blue);
+    }
+
+    #test8 {
+      background: linear-gradient(60deg, red, yellow, blue);
+    }
+
+    #r1 {
+      background: radial-gradient(red, yellow, rgb(30, 144, 255));
+    }
+
+    #r2 {
+      background: radial-gradient(red 5%, yellow 25%, #1E90FF 50%);
+    }
+
+    #r3 {
+      width: 300px;
+      background: radial-gradient(ellipse closest-side, red, yellow 10%, #1E90FF 50%, white);
+    }
+
+    #r4 {
+      width: 300px;
+      background: radial-gradient(ellipse farthest-side, red, yellow 10%, #1E90FF 50%, white);
+    }
+
+    #r5 {
+      width: 300px;
+      background: radial-gradient(circle closest-side, red, yellow 10%, #1E90FF 50%, white);
+    }
+
+    #r6 {
+      background: linear-gradient(-45deg, red, red 5px, #a5ee66 5px, #a5ee66 10px);
+    }
+
+    #r7 {
+      background: repeating-linear-gradient(-45deg, red, red 5px, white 5px, white 10px);
+    }
+
+    #r8 {
+      width: 400px;
+      height: 400px;
+      background: #000;
+      background-image: repeating-linear-gradient(90deg, transparent, transparent 50px,
+      rgba(255, 127, 0, 0.25) 50px, rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px,
+      rgba(255, 127, 0, 0.25) 63px, rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px,
+      rgba(255, 206, 0, 0.25) 116px, rgba(255, 206, 0, 0.25) 166px),
+      repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255, 127, 0, 0.25) 50px,
+          rgba(255, 127, 0, 0.25) 56px, transparent 56px, transparent 63px, rgba(255, 127, 0, 0.25) 63px,
+          rgba(255, 127, 0, 0.25) 69px, transparent 69px, transparent 116px, rgba(255, 206, 0, 0.25) 116px,
+          rgba(255, 206, 0, 0.25) 166px),
+      repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px,
+          rgba(143, 77, 63, 0.25) 10px),
+      repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(143, 77, 63, 0.25) 5px,
+          rgba(143, 77, 63, 0.25) 10px);
+    }
+
+    #r9 {
+      background: repeating-radial-gradient(black, black 5px, white 5px, white 10px);
+    }
+
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div id="test1">linear-gradient(to top, red, yellow, blue)</div>
+  <div id="test2">linear-gradient(to bottom right, red 25%, white 50%, yellow 75%, blue);</div>
+  <div id="test3">linear-gradient(0deg, red, yellow, blue);</div>
+  <div id="test7"></div>
+  <div id="test4"></div>
+  <div id="test8"></div>
+  <div id="test5"></div>
+  <div id="test6"></div>
+</div>
+<div class="wrap">
+  <div id="r1">radial-gradient(red, yellow, rgb(30, 144, 255))</div>
+  <div id="r2">radial-gradient(red 5%, yellow 25%, #1E90FF 50%)</div>
+  <div id="r3"></div>
+  <div id="r4"></div>
+  <div id="r5"></div>
+  <div id="r6"></div>
+  <div id="r7"></div>
+  <div id="r8"></div>
+  <div id="r9"></div>
+</div>
+</body>
+</html>
