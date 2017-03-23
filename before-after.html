@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>before-after-example</title>
+  <style>
+
+
+    blockquote::before {
+      content: open-quote;
+      z-index: -1;
+      color: #DDD;
+      font-size: 120px;
+      font-family: serif;
+      font-weight: bolder;
+    }
+
+    blockquote::after {
+      content: close-quote;
+      color: #DDDDDD;
+      font-size: 120px;
+      font-weight: bold;
+    }
+
+
+  </style>
 </head>
 <body>
-$END$
+
+<div>
+  <blockquote>
+    furnish furnish furnish furnish
+  </blockquote>
+</div>
 </body>
 </html>
