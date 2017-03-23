@@ -22,6 +22,148 @@
       font-weight: bold;
     }
 
+    a {
+      position: relative;
+      display: inline-block;
+      outline: none;
+      text-decoration: none;
+      color: #000;
+      font-size: 32px;
+      padding: 5px 10px;
+    }
+
+    a:hover::before, a:hover::after {
+      position: absolute;
+    }
+
+    a:hover::before {
+      content: "\5B";
+      left: -10px;
+    }
+
+    a:hover::after {
+      content: "\5D";
+      right: -10px;
+    }
+
+    .second a {
+      position: relative;
+      outline: none;
+      margin: 10px;
+      text-decoration: none;
+      color: #000;
+      font-size: 32px;
+      padding: 0 10px;
+    }
+
+    /* 大框 */
+    .second a:hover::before, .second a:hover::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -15%;
+      left: -14%;
+      width: 120%;
+      height: 120%;
+      border: 4px solid #DDDDDD;
+    }
+
+    /* 小框 */
+    .second a:hover::after {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-width: 2px;
+    }
+
+    .btn {
+      color: rgba(5, 5, 4, 0.98);
+      cursor: pointer;
+      display: block;
+      font-size: 16px;
+      line-height: 45px;
+      margin: auto;
+      position: relative;
+      text-transform: uppercase;
+      vertical-align: middle;
+      text-align: center;
+      width: 100%;
+
+    }
+
+    .three {
+      width: 100px;
+    }
+
+    .btn-1 svg {
+      height: 45px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    .btn-1 rect {
+      fill: #c19c4f;
+      stroke: #adffa0;
+      stroke-width: 4px;
+      stroke-dasharray: 442, 0;
+    }
+
+    .btn-1:hover {
+      background: rgba(225, 51, 45, 0);
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .btn-1:hover rect {
+      stroke-width: 5px;
+      stroke-dasharray: 15, 310;
+      stroke-dashoffset: 48;
+      -webkit-transition: all 1.35s;
+      -moz-transition: all 1.35s;
+      -ms-transition: all 1.35s;
+      -o-transition: all 1.35s;
+      /*transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);*/
+      transition: all 1.35s ease;
+    }
+
+    .btn-2 {
+      font-size: 40px;
+      letter-spacing: 0;
+      width: 150px;
+    }
+
+    .btn-2:hover {
+      letter-spacing: 5px;
+    }
+
+    .btn-2:after,
+    .btn-2:before {
+      border: 1px solid rgba(193, 156, 79, 0);
+      content: '';
+      display: block; /*不加这一句，会导致加入的线在左右而不是上下*/
+      margin: 0 auto;
+      -webkit-transition: all 280ms;
+      -moz-transition: all 280ms;
+      -ms-transition: all 280ms;
+      -o-transition: all 280ms;
+      transition: all 280ms ease-in-out;
+      width: 0; /*不加这一句，会导致没有效果*/
+    }
+
+    .btn-2:hover:after,
+    .btn-2:hover:before {
+      background-color: #050504;
+      -webkit-transition: all 380ms;
+      -moz-transition: all 380ms;
+      -ms-transition: all 380ms;
+      -o-transition: all 380ms;
+      transition: all 380ms ease-in-out;
+      width: 100%;
+    }
+
 
   </style>
 </head>
@@ -32,5 +174,30 @@
     furnish furnish furnish furnish
   </blockquote>
 </div>
+<div>
+  <a href="">landscape try mouse hover it .</a>
+  <a href="">necessarily</a>
+</div>
+
+<div class="second">
+  <a href="">curl</a>
+  <a href="">justification</a>
+  <a href="">strategy improvement</a>
+  <p>效果比例并没有协调好</p>
+</div>
+
+<div class="three">
+  <a href="javascript:void(0)" class="btn btn-1">
+    <svg>
+      <rect x="0" y="0" fill-opacity="0.5" height="100%" width="100%"></rect>
+    </svg>
+    snack
+  </a>
+</div>
+
+<div>
+  <div class="btn-2">consult</div>
+</div>
+
 </body>
 </html>
